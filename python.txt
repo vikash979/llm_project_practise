@@ -1,0 +1,6 @@
+Python is a high-level programming language.
+Python is widely used for backend development,
+data science, machine learning, automation, and scripting.
+
+FastAPI is a modern Python framework for building APIs.
+Django is another popular Python framework used for web applications.

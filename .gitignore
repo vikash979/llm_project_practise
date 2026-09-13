@@ -1,0 +1,8 @@
+.env
+sql_first_class
+*.key
+*.json
+*.sh
+run.sh
+.txt
+run.sh

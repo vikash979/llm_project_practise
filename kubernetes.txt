@@ -1,0 +1,43 @@
+Kubernetes is a container orchestration platform.
+It is used to deploy, manage, and scale containerized applications.
+
+A Kubernetes cluster contains nodes.
+Pods are the smallest deployable units in Kubernetes.
+Services provide networking access to applications running in pods.
+
+
+INSERT INTO customer
+(cust_id, cust_name, cust_email, cust_mob)
+VALUES
+(1, 'Manish', 'manish@gmail.com', '9876543210'),
+(2, 'Sumit', 'sumit@gmail.com', '9876543211'),
+(3, 'Megha', 'megha@gmail.com', '9876543212'),
+(4, 'Madhu', 'madhu@gmail.com', '9876543213'),
+(5, 'Rohit', 'rohit@gmail.com', '9876543214');
+
+CREATE TABLE "order" (
+    order_id INT PRIMARY KEY,
+    cust_id INT,
+    prod_quan INT,
+    product_name VARCHAR(100),
+    order_date DATE,
+
+    FOREIGN KEY (cust_id)
+        REFERENCES customer(cust_id)
+);
+
+INSERT INTO "order"
+(order_id, cust_id, prod_quan, product_name, order_date)
+VALUES
+(101, 1, 2, 'T-shirt', '2026-09-03'),
+(102, 3, 4, 'Cake',    '2026-09-03'),
+(103, 1, 4, 'Shirt',   '2026-09-04'),
+(104, 4, 5, 'Kurti',   '2026-09-05'),
+(105, 1, 2, 'T-shirt', '2026-09-06');
+
+
+-- select  c.cust_id, c.cust_name, o.prod_name from customer c , "order" o where c.cust_id = o.cust_id 
+-- order by c.cust_id, c.cust_name asc   --- inner join
+
+select  c.cust_id, c.cust_name, o.prod_name from customer c  INNER JOIN "order"  o on c.cust_id = o.cust_id 
+
