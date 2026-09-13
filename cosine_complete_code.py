@@ -43,3 +43,5 @@ print(corpus_embeddings.shape)
 
 print("\nCosine scores:")
 print(cosine_scores)
+top_results = cosine_scores[0].argsort(descending=True)
+print("top results----",top_results)
