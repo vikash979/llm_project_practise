@@ -137,3 +137,12 @@ similarity = util.cos_sim(
 
 # embeddings = model.encode(sentences)
 print("===============calculating cosine similarity directly.====", similarity)
+
+top_results = similarity[0].argsort(descending=True)
+print("top results----",top_results)
+
+
+for idx in top_results:
+    print(f"\nDocument Index: {idx}")
+    print(f"Similarity Score: {similarity[0][idx]:.4f}")
+    print(f"Matched Text: {documents[idx]}")

@@ -45,3 +45,9 @@ print("\nCosine scores:")
 print(cosine_scores)
 top_results = cosine_scores[0].argsort(descending=True)
 print("top results----",top_results)
+
+
+for idx in top_results:
+    print(f"\nDocument Index: {idx}")
+    print(f"Similarity Score: {cosine_scores[0][idx]:.4f}")
+    print(f"Matched Text: {corpus[idx]}")
